@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NingStudio官网</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f8ff, #d1e7ff);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            width: 200px; /* 增大Logo尺寸 */
+            height: 200px;
+            border-radius: 50%; /* 添加圆角效果 */
+            margin-bottom: 15px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #0056b3;
+        }
+
+        /* Main content area */
+        main {
+            padding: 40px 20px;
+        }
+
+        section {
+            background-color: #ffffff;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        section:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #f7f7f7;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 15% auto;
+            padding: 40px;
+            border-radius: 15px;
+            width: 60%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 30px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+    </style>
+    <script>
+        // 打开模态框
+        function openModal() {
+            document.getElementById("modal").style.display = "block";
+        }
+
+        // 关闭模态框
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        // 更新日报内容
+        function updateDailyReport() {
+            const selectedDate = document.getElementById("dateSelect").value;
+            const reportContent = {
+                "2024-11-21": "2024-11-21：我们为客户带来了全新的网站制作功能，欢迎咨询详情！",
+                "2024-11-20": "2024-11-20：今天是我们公司成立的重要日子，我们的梦想才刚刚起航！"
+            };
+            document.getElementById("dailyReportContent").innerText = reportContent[selectedDate];
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <img src="logo.jpg" alt="NingStudio Logo">
+    <nav>
+        <ul>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#projects">我们的项目</a></li>
+            <li><a href="#joinus">加入我们</a></li>
+            <li><a href="#dailyReports">日报</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- 关于我们 -->
+    <section id="about">
+        <h2>关于我们</h2>
+        <p>公司名：NingStudio</p>
+        <p>我们是一家刚刚创立的公司，致力于通过技术和创新，为客户提供优质的服务。</p>
+        <p>创始人：Eric Ning，拥有丰富的行业经验和独特的创新视角。</p>
+    </section>
+
+    <!-- 项目模块 -->
+<section id="projects">
+    <h2>我们的项目</h2>
+    <h3>网站制作</h3>
+    <p>价格实惠，功能全面，为您量身定制您的个人或企业网站。</p>
+    <button onclick="openModal()">查看详情</button>
+
+    <!-- 快捷微信联系方式 -->
+    <div style="margin-top: 20px; text-align: center;">
+        <h3>扫码快速联系微信</h3>
+        <img src="v2.jpg" alt="微信二维码" style="width: 150px; height: 150px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+        <p style="margin-top: 10px; color: #666; font-size: 14px;">扫一扫，添加微信，了解更多详情</p>
+    </div>
+
+    <!-- 模态框 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h4>网站制作服务详情</h4>
+            <p>我们提供高质量的网站制作服务，包括前端设计、后端开发、SEO优化等，满足您的各种需求。</p>
+            <p>定价：￥39.9人民币，提供透明、标准化的收费标准。</p>
+            <p>联系我们微信号 <strong>ninghaobo1009</strong> 或邮箱 <strong>eric131109@qq.com</strong>，了解更多细节。</p>
+        </div>
+    </div>
+</section>
+
+    <!-- 加入我们 -->
+    <section id="joinus">
+        <h2>加入我们</h2>
+        <p>我们正在寻找优秀的合作伙伴和志同道合的伙伴。如果你有创新的想法，欢迎加入我们。</p>
+        <p>请发送邮件至：<strong>eric131109@qq.com</strong>，期待你的加入！</p>
+    </section>
+
+    <!-- 日报模块 -->
+    <section id="dailyReports">
+        <h2>日报</h2>
+        <label for="dateSelect">选择日期：</label>
+        <select id="dateSelect" onchange="updateDailyReport()">
+            <option value="2024-11-21">2024-11-21</option>
+            <option value="2024-11-20">2024-11-20</option>
+        </select>
+        <p id="dailyReportContent">2024-11-21：我们为客户带来了全新的网站制作功能，欢迎咨询详情！</p>
+    </section>
+</main>
+
+<footer>
+    <p>联系方式：</p>
+    <p>微信：<strong>ninghaobo1009</strong>（方便于支付）</p>
+    <p>邮箱：<strong>eric131109@qq.com</strong></p>
+</footer>
+
+</body>
+</html>
